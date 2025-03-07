@@ -1,0 +1,38 @@
+.addBtn{
+    background-color: bisque;
+    color: red;
+}
+
+.cancelBtn{
+    background-color: lightgray;
+    color: black;
+}
+
+.sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sku-table th,
+.sku-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.sku-table th {
+    background-color: #f4f4f4;
+}
+
+.sku-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.sku-table tr:nth-child(odd) td:last-child button {
+    background-color: #fff;
+}
+
+.sku-table tr:nth-child(odd) td:first-child button {
+    background-color: #fff;
+}

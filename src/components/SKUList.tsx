@@ -1,60 +1,56 @@
 import React from "react";
-import {
-  DndContext,
-  closestCenter,
-  KeyboardSensor,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
-import {
-  SortableContext,
-  sortableKeyboardCoordinates,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import SortableRow from "./Sortable";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
-interface Store {
+interface SKU {
   id: number;
   name: string;
-  city: string;
-  state: string;
+  price: number;
+  cost: number;
 }
 
-interface StoreListProps {
-  stores: Store[];
-  onRemoveStore: (id: number) => void;
-  onSortEnd: (event: any) => void;
+interface SKUListProps {
+  skus: SKU[];
+  onRemoveSKU: (id: number) => void;
+  onEditSKU: (sku: SKU) => void;
+  setIsModalOpen: (isOpen: boolean) => void; 
 }
 
-const StoreList: React.FC<StoreListProps> = ({ stores, onRemoveStore, onSortEnd }) => {
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-  );
-
+const SKUList: React.FC<SKUListProps> = ({ skus, onRemoveSKU,  onEditSKU, setIsModalOpen }) => {
   return (
-    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onSortEnd}>
-      <table className="store-table">
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>Store</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Actions</th>
+    <table className="sku-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>SKU</th>
+          <th>Price</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {skus.map((sku) => (
+          <tr key={sku.id}>
+            <td style={{width: '10px'}}>
+              <button className="text-red-500 hover:text-red-700" onClick={() => onRemoveSKU(sku.id)}>
+                <FaTrash size={16} />
+              </button>
+            </td>
+            <td>{sku.name}</td>
+            <td>${sku.price.toFixed(2)}</td>
+            <td>${sku.cost.toFixed(2)}</td>
+            <td style={{width: '10px'}}>
+            <button
+                className="text-blue-500 hover:text-blue-700 mr-2"
+                onClick={() => { onEditSKU(sku); setIsModalOpen(true); }}
+              >
+                <FaEdit size={16} />
+              </button>
+            </td>
           </tr>
-        </thead>
-        <SortableContext items={stores.map((store) => store.id)} strategy={verticalListSortingStrategy}>
-          <tbody>
-            {stores.map((store, index) => (
-              <SortableRow key={store.id} id={store.id} index={index} store={store} onRemoveStore={onRemoveStore} />
-            ))}
-          </tbody>
-        </SortableContext>
-      </table>
-    </DndContext>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
-export default StoreList;
+export default SKUList;

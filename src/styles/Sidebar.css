@@ -1,3 +1,4 @@
+/* Sidebar styles */
 .sidebar {
     position: fixed;
     left: 0;
@@ -8,8 +9,11 @@
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
+
+/* Sidebar Links */
 .sidebar a {
     display: flex;
     align-items: center;
@@ -25,6 +29,7 @@
     color: white;
 }
 
+/* Active link styling */
 .sidebar .active {
     background-color: #dddddd;
     color: black;
@@ -33,4 +38,34 @@
 
 .sidebar .active a {
     color: blue;
+}
+
+/* Hamburger Menu Button */
+.menu-btn {
+    position: fixed;
+    top: 62px;
+    left: 110px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+/* Show hamburger menu on mobile */
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        padding: 0.25rem;
+    }
+
+    .sidebar {
+        width: 150px;
+        transform: translateX(-100%);
+        position: fixed;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
 }

@@ -33,15 +33,18 @@ const Stores: React.FC = () => {
       {/* Store Modal */}
       {isModalOpen && <StoreForm onAddStore={handleAddStore} onClose={() => setIsModalOpen(false)} />}
 
-      {/* Scrollable Table Card */}
+      <h2 className="text-xl text-blue-500 font-bold">Store List</h2>
+
       <div className="bg-white shadow-md rounded-lg p-4 w-full max-h-[500px] overflow-y-auto">
         <StoreList stores={stores} onRemoveStore={removeStore} onSortEnd={handleSortEnd} />
       </div>
 
       {/* Add Store Button */}
-      <button onClick={() => setIsModalOpen(true)} className="text-white mt-4 px-4 py-2 rounded addBtn">
-        Add Store
-      </button>
+      <div className="flex justify-left">
+        <button onClick={() => setIsModalOpen(true)} className="text-white mt-4 px-4 py-2 rounded addBtn">
+          Add Store
+        </button>
+      </div>
     </div>
   );
 };
