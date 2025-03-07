@@ -1,0 +1,34 @@
+.addBtn{
+    background-color: bisque;
+    color: red;
+}
+
+.cancelBtn{
+    background-color: lightgray;
+    color: black;
+}
+
+.store-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.store-table th,
+.store-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.store-table th {
+    background-color: #f4f4f4;
+}
+
+.store-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.store-table tr:nth-child(odd) td:last-child button {
+    background-color: #fff;
+}

@@ -4,19 +4,33 @@
     top: 60px;
     width: 200px;
     height: calc(100vh - 60px);
-    background: #f8f9fa;
+    background: white;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
 }
 
 .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     text-decoration: none;
     padding: 10px 20px;
-    display: block;
     color: black;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .sidebar a:hover {
-    background: #ddd;
+    background: black;
+    color: white;
+}
+
+.sidebar .active {
+    background-color: #dddddd;
+    color: black;
+    font-weight: bold;
+}
+
+.sidebar .active a {
+    color: blue;
 }

@@ -4,7 +4,7 @@ import AppRouter from './router'
 function App() {
 
   return (
-    <div className="flex">
+    <div style={{width: '70vw'}}>
       <AppRouter />
     </div>
   )
