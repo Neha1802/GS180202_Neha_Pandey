@@ -1,0 +1,22 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 200px;
+    height: calc(100vh - 60px);
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: black;
+}
+
+.sidebar a:hover {
+    background: #ddd;
+}
