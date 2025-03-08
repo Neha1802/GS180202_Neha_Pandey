@@ -1,0 +1,56 @@
+.planning-container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .data-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .sales-input {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .gm-percent {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .gm-percent.green {
+    background-color: green;
+  }
+  
+  .gm-percent.yellow {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .gm-percent.orange {
+    background-color: orange;
+  }
+  
+  .gm-percent.red {
+    background-color: red;
+  }
+  

@@ -68,7 +68,6 @@ export const StoreProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const loadStores = async () => {
       const db = await openStoreDB();
       const allStores = await db.getAll("stores");
-  
       if (allStores.length === 0) {
         //If no data exists, set a default store list
         const defaultStores: Store[] = [
